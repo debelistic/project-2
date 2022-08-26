@@ -118,6 +118,7 @@ Resources:
       VpcId:
         Fn::ImportValue:
           Fn::Sub: "${EnvironmentName}-VPCID"
+
 Outputs:
   LoadBalancer:
     Description: A reference to the Application Load Balancer
@@ -127,7 +128,7 @@ Outputs:
 
 
   LoadBalancerUrl:
-    Description: The URL of the ALB
+    Description: The URL of the web ALB
     Value: !GetAtt WebAppLB.DNSName
     Export:
       Name: !Sub ${EnvironmentName}-WebAppLB-DNS
