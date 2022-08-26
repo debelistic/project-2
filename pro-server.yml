@@ -52,9 +52,8 @@ Resources:
           apt-get install apache2 -y
           systemctl start apache2.service
           cd /var/www/html
-          echo "project 2 Demo Web Server Up and Running!" > index.html
+          echo "it works! Udagram, Udacity" > index.html
       ImageId: ami-0ffe740eecf0e522b
-      KeyName: mrdope
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
