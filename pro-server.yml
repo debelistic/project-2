@@ -53,7 +53,7 @@ Resources:
           systemctl start apache2.service
           cd /var/www/html
           echo "it works! Udagram, Udacity" > index.html
-      ImageId: ami-0ffe740eecf0e522b
+      ImageId: ami-00ddb0e5626798373
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.medium
@@ -128,7 +128,8 @@ Outputs:
 
   LoadBalancerUrl:
     Description: The URL of the web ALB
-    Value: !GetAtt WebAppLB.DNSName
+    Value: !Join [ "", ["http://" , !GetAtt WebAppLB.DNSName ]]
     Export:
       Name: !Sub ${EnvironmentName}-WebAppLB-DNS
+
 
